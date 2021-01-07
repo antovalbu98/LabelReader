@@ -1,9 +1,25 @@
+"""
+    Cuando cambie algo del script hay que añadir las líneas que antes tengan:
+
+    # NEED TO BE ADDED
+"""
+
 # cargo librerias
 from PIL import Image
 import pytesseract as tess
 import os
 from sklearn.feature_extraction.text import CountVectorizer
 import pandas as pd
+
+# NEED TO BE ADDED
+import json
+# NEED TO BE ADDED
+import sys
+
+# NEED TO BE ADDED
+tess.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
+
+
 
 # creo la expresion que vectorizara
 palabras_clave = ['no reutilizable 4 horas 8 horas lavar 25 veces 0065 0064 fpp2 fpp1 fpp3 nr 149 14683 quirurgica higienica']
@@ -966,4 +982,5 @@ def lector(vectorizador, direccion_image):
             
     return resultados
 
-lector(vectorizer, direccion_image= "Aqui va la direccion")
+# NEED TO BE ADDED
+print(json.dumps(lector(vectorizer, direccion_image= sys.argv[1])))
